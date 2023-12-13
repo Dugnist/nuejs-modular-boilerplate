@@ -1,0 +1,29 @@
+
+<!--
+  Main layout with the global header
+-->
+
+<script>
+  import { router } from '/@nue/app-router.js';
+  import { controller } from './controller.js';
+  import { getPeople } from '/modules/users/services/people.js';
+</script>
+
+<main @name="modular-app">
+
+  <header>
+    <nav class="mastnav wrap">
+      <img class="logo" src="shared/img/nue.svg">
+      <a href="{base}/">Members</a>
+      <a href="{base}/customers">Customers</a>
+      <a href="readme.html">Readme</a>
+    </nav>
+  </header>
+
+  <article id="article" class="wrap"/>
+
+  <script>
+    mounted = controller({ router, getPeople }).mounted;
+  </script>
+
+</main>
